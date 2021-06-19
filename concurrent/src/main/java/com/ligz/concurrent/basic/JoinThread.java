@@ -1,4 +1,4 @@
-package concurrent.basic;
+package com.ligz.concurrent.basic;
 
 public class JoinThread {
     public static void main(String[] args) throws InterruptedException {

@@ -1,4 +1,4 @@
-package concurrent.basic;
+package com.ligz.concurrent.basic;
 
 public class WaitAndSignal {
     private boolean flag;

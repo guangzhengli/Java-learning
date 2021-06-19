@@ -1,4 +1,4 @@
-package concurrent.lock;
+package com.ligz.concurrent.lock;
 
 import java.util.ArrayList;
 import java.util.Arrays;

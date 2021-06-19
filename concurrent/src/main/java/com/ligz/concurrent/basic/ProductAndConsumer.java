@@ -1,4 +1,4 @@
-package concurrent.basic;
+package com.ligz.concurrent.basic;
 
 import java.util.ArrayList;
 import java.util.List;
