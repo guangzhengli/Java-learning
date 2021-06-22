@@ -16,7 +16,6 @@ public class EchoServer {
     public static void main(String[] args) throws Exception {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workGroup = new NioEventLoopGroup();
-        final EchoServerHandler serverHandler = new EchoServerHandler();
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workGroup)
@@ -25,9 +24,10 @@ public class EchoServer {
                     .handler(new LoggingHandler(LogLevel.INFO))
                     .childHandler(new ChannelInitializer<SocketChannel>() {
                         @Override
-                        public void initChannel(SocketChannel ch) throws Exception {
+                        public void initChannel(SocketChannel ch) {
                             ChannelPipeline p = ch.pipeline();
-                            p.addLast(serverHandler);
+                            p.addLast(new LoggingHandler(LogLevel.INFO));
+                            p.addLast(new EchoServerHandler());
                         }
                     });
             ChannelFuture f = b.bind(8007).sync();
