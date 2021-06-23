@@ -1,10 +1,12 @@
 package com.ligz.netty.protocol.response;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import static com.ligz.netty.protocol.Command.MESSAGE_RESPONSE;
 
-@Data
+@Getter
+@Setter
 public class MessageResponse extends BaseResponse {
     private String userId;
     private String userName;

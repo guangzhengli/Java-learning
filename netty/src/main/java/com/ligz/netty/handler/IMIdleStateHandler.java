@@ -1,11 +1,13 @@
-package com.ligz.netty.server.handler;
+package com.ligz.netty.handler;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.timeout.IdleStateEvent;
 import io.netty.handler.timeout.IdleStateHandler;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.TimeUnit;
 
+@Slf4j
 public class IMIdleStateHandler extends IdleStateHandler {
     private static final int READER_IDLE_TIME = 30;
 
@@ -15,7 +17,7 @@ public class IMIdleStateHandler extends IdleStateHandler {
 
     @Override
     protected void channelIdle(ChannelHandlerContext ctx, IdleStateEvent evt) {
-        System.out.println(READER_IDLE_TIME + "'s not receive message, close connection...");
+        log.info(READER_IDLE_TIME + "'s not receive message, close connection...");
         ctx.channel().close();
     }
 }

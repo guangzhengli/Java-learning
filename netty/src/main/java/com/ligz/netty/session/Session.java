@@ -3,6 +3,8 @@ package com.ligz.netty.session;
 import io.netty.channel.Channel;
 import io.netty.channel.group.ChannelGroup;
 
+import java.util.Optional;
+
 public interface Session {
     void bind(User user, Channel channel);
 
@@ -10,11 +12,11 @@ public interface Session {
 
     boolean hasLogin(Channel channel);
 
-    User getUser(Channel channel);
+    Optional<User> getUser(Channel channel);
 
-    Channel getChannel(String userId);
+    Optional<Channel> getChannel(String userId);
 
     void bindChannelGroup(String groupId, ChannelGroup channelGroup);
 
-    ChannelGroup getChannelGroup(String groupId);
+    Optional<ChannelGroup> getChannelGroup(String groupId);
 }

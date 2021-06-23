@@ -1,11 +1,9 @@
 package com.ligz.netty.util;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.UUID;
 
 public class IDUtil {
-    private static AtomicLong requestId;
-
-    public static Long getRequestId() {
-        return requestId.getAndIncrement();
+    public static String getId() {
+        return UUID.randomUUID().toString().split("-")[0];
     }
 }
