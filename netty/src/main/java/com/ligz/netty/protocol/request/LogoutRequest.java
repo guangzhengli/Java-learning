@@ -1,12 +1,14 @@
 package com.ligz.netty.protocol.request;
 
 import com.ligz.netty.protocol.CustomProtocol;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-import static com.ligz.netty.protocol.Command.LOGOUT_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.LOGOUT_REQUEST;
 
 
-@Data
+@Getter
+@Setter
 public class LogoutRequest extends CustomProtocol {
     @Override
     public Byte getCommand() {

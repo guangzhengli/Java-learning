@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.ligz.netty.protocol.Command.SEND_GROUP_MESSAGE_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.SEND_GROUP_MESSAGE_REQUEST;
 
 @Getter
 @Setter

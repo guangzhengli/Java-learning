@@ -4,7 +4,7 @@ import com.ligz.netty.protocol.CustomProtocol;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.ligz.netty.protocol.Command.LIST_GROUP_MEMBERS_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.LIST_GROUP_MEMBERS_REQUEST;
 
 
 @Getter

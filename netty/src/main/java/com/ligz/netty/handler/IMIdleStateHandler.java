@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 public class IMIdleStateHandler extends IdleStateHandler {
-    private static final int READER_IDLE_TIME = 30;
+    private static final int READER_IDLE_TIME = 300;
 
     public IMIdleStateHandler() {
         super(READER_IDLE_TIME, 0, 0, TimeUnit.SECONDS);

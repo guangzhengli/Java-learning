@@ -18,7 +18,7 @@ public class MemorySession implements Session {
 
     private MemorySession() {}
 
-    public MemorySession getInstance() {
+    public static MemorySession getInstance() {
         return INSTANCE;
     }
 

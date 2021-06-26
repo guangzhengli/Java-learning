@@ -2,11 +2,16 @@ package com.ligz.netty.server;
 
 import com.ligz.netty.codec.CustomProtocolHandler;
 import com.ligz.netty.codec.Spliter;
+import com.ligz.netty.config.GlobalConfig;
 import com.ligz.netty.handler.IMIdleStateHandler;
+import com.ligz.netty.serialize.JSONSerialize;
+import com.ligz.netty.serialize.Serialize;
 import com.ligz.netty.server.handler.AuthHandler;
 import com.ligz.netty.server.handler.HeartBeatRequestHandler;
 import com.ligz.netty.server.handler.IMHandler;
 import com.ligz.netty.server.handler.LoginRequestHandler;
+import com.ligz.netty.session.MemorySession;
+import com.ligz.netty.session.Session;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
@@ -21,6 +26,10 @@ public class Server {
     private static final int PORT = 8000;
 
     public static void main(String[] args) {
+        Session session = MemorySession.getInstance();
+        Serialize serialize = new JSONSerialize();
+        GlobalConfig.init(session, serialize);
+
         NioEventLoopGroup boss = new NioEventLoopGroup(1);
         NioEventLoopGroup worker = new NioEventLoopGroup();
 

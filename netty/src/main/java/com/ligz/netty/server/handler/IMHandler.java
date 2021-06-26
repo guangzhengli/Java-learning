@@ -7,13 +7,13 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.ligz.netty.protocol.Command.CREATE_GROUP_REQUEST;
-import static com.ligz.netty.protocol.Command.JOIN_GROUP_REQUEST;
-import static com.ligz.netty.protocol.Command.LIST_GROUP_MEMBERS_REQUEST;
-import static com.ligz.netty.protocol.Command.LOGOUT_REQUEST;
-import static com.ligz.netty.protocol.Command.QUIT_GROUP_REQUEST;
-import static com.ligz.netty.protocol.Command.SEND_GROUP_MESSAGE_REQUEST;
-import static com.ligz.netty.protocol.Command.SEND_MESSAGE_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.CREATE_GROUP_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.JOIN_GROUP_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.LIST_GROUP_MEMBERS_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.LOGOUT_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.QUIT_GROUP_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.SEND_GROUP_MESSAGE_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.SEND_MESSAGE_REQUEST;
 
 public class IMHandler extends SimpleChannelInboundHandler<CustomProtocol> {
     public static final IMHandler INSTANCE = new IMHandler();

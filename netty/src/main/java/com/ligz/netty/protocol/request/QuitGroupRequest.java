@@ -4,7 +4,7 @@ import com.ligz.netty.protocol.CustomProtocol;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.ligz.netty.protocol.Command.QUIT_GROUP_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.QUIT_GROUP_REQUEST;
 
 @Setter
 @Getter

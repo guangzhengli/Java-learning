@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import java.util.List;
 
-import static com.ligz.netty.protocol.Command.CREATE_GROUP_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.CREATE_GROUP_RESPONSE;
 
 
 @Getter

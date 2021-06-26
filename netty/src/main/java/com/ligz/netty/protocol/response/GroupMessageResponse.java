@@ -4,7 +4,7 @@ import com.ligz.netty.session.User;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.ligz.netty.protocol.Command.GROUP_MESSAGE_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.GROUP_MESSAGE_RESPONSE;
 
 
 @Setter

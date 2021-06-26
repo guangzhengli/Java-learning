@@ -1,6 +1,6 @@
 package com.ligz.netty.protocol;
 
-public interface Command {
+public interface CommandConst {
     Byte LOGIN_REQUEST = 1;
 
     Byte LOGIN_RESPONSE = 2;

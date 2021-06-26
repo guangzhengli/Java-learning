@@ -3,7 +3,7 @@ package com.ligz.netty.protocol.response;
 import lombok.Getter;
 import lombok.Setter;
 
-import static com.ligz.netty.protocol.Command.JOIN_GROUP_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.JOIN_GROUP_RESPONSE;
 
 @Getter
 @Setter

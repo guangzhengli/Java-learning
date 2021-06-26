@@ -25,24 +25,24 @@ import io.netty.buffer.ByteBuf;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.ligz.netty.protocol.Command.CREATE_GROUP_REQUEST;
-import static com.ligz.netty.protocol.Command.CREATE_GROUP_RESPONSE;
-import static com.ligz.netty.protocol.Command.GROUP_MESSAGE_RESPONSE;
-import static com.ligz.netty.protocol.Command.HEARTBEAT_REQUEST;
-import static com.ligz.netty.protocol.Command.HEARTBEAT_RESPONSE;
-import static com.ligz.netty.protocol.Command.JOIN_GROUP_REQUEST;
-import static com.ligz.netty.protocol.Command.JOIN_GROUP_RESPONSE;
-import static com.ligz.netty.protocol.Command.LIST_GROUP_MEMBERS_REQUEST;
-import static com.ligz.netty.protocol.Command.LIST_GROUP_MEMBERS_RESPONSE;
-import static com.ligz.netty.protocol.Command.LOGIN_REQUEST;
-import static com.ligz.netty.protocol.Command.LOGIN_RESPONSE;
-import static com.ligz.netty.protocol.Command.LOGOUT_REQUEST;
-import static com.ligz.netty.protocol.Command.LOGOUT_RESPONSE;
-import static com.ligz.netty.protocol.Command.MESSAGE_RESPONSE;
-import static com.ligz.netty.protocol.Command.QUIT_GROUP_REQUEST;
-import static com.ligz.netty.protocol.Command.QUIT_GROUP_RESPONSE;
-import static com.ligz.netty.protocol.Command.SEND_GROUP_MESSAGE_REQUEST;
-import static com.ligz.netty.protocol.Command.SEND_MESSAGE_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.CREATE_GROUP_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.CREATE_GROUP_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.GROUP_MESSAGE_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.HEARTBEAT_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.HEARTBEAT_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.JOIN_GROUP_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.JOIN_GROUP_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.LIST_GROUP_MEMBERS_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.LIST_GROUP_MEMBERS_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.LOGIN_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.LOGIN_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.LOGOUT_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.LOGOUT_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.MESSAGE_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.QUIT_GROUP_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.QUIT_GROUP_RESPONSE;
+import static com.ligz.netty.protocol.CommandConst.SEND_GROUP_MESSAGE_REQUEST;
+import static com.ligz.netty.protocol.CommandConst.SEND_MESSAGE_REQUEST;
 
 /**
  * **********************************************************************
