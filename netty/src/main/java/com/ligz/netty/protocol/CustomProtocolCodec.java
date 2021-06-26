@@ -63,7 +63,7 @@ import static com.ligz.netty.protocol.Command.SEND_MESSAGE_REQUEST;
  * + 4 // body length
  * + N // body
  */
- class CustomProtocolCodec {
+public class CustomProtocolCodec {
     public static final int MAGIC_NUMBER = 0x12345678;
     public static final CustomProtocolCodec INSTANCE = new CustomProtocolCodec();
 
