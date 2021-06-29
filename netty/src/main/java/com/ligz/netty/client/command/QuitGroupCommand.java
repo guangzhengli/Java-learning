@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class QuitGroupCommand implements Command {
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        QuitGroupRequest quitGroupRequestPacket = new QuitGroupRequest();
-        log.info("please input the groupId, quit the group");
+        QuitGroupRequest quitGroupRequest = new QuitGroupRequest();
+        System.out.println("please input the groupId, quit the group");
         String groupId = scanner.next();
 
-        quitGroupRequestPacket.setGroupId(groupId);
-        channel.writeAndFlush(quitGroupRequestPacket);
+        quitGroupRequest.setGroupId(groupId);
+        channel.writeAndFlush(quitGroupRequest);
     }
 }

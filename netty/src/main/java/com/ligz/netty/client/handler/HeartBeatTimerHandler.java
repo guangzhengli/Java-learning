@@ -22,7 +22,6 @@ public class HeartBeatTimerHandler extends ChannelInboundHandlerAdapter {
                 ctx.writeAndFlush(new HeartBeatRequest());
                 scheduleSendHeartBeat(ctx);
             }
-
         }, HEARTBEAT_INTERVAL, TimeUnit.SECONDS);
     }
 }

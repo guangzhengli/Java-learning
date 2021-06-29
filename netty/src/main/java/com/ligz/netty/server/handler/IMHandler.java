@@ -1,6 +1,7 @@
 package com.ligz.netty.server.handler;
 
 import com.ligz.netty.protocol.CustomProtocol;
+import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -15,6 +16,7 @@ import static com.ligz.netty.protocol.CommandConst.QUIT_GROUP_REQUEST;
 import static com.ligz.netty.protocol.CommandConst.SEND_GROUP_MESSAGE_REQUEST;
 import static com.ligz.netty.protocol.CommandConst.SEND_MESSAGE_REQUEST;
 
+@ChannelHandler.Sharable
 public class IMHandler extends SimpleChannelInboundHandler<CustomProtocol> {
     public static final IMHandler INSTANCE = new IMHandler();
     private final Map<Byte, SimpleChannelInboundHandler<? extends CustomProtocol>> handlerMap = new HashMap<>();

@@ -1,5 +1,6 @@
 package com.ligz.netty.client.handler;
 
+import com.ligz.netty.config.GlobalConfig;
 import com.ligz.netty.protocol.response.LogoutResponse;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
@@ -10,6 +11,7 @@ public class LogoutResponseHandler extends SimpleChannelInboundHandler<LogoutRes
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, LogoutResponse logoutResponse) {
+        GlobalConfig.getSession().unBind(ctx.channel());
         log.info("sign out success");
     }
 }

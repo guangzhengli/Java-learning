@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class LogoutCommand implements Command {
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        LogoutRequest logoutRequestPacket = new LogoutRequest();
-        channel.writeAndFlush(logoutRequestPacket);
+        LogoutRequest logoutRequest = new LogoutRequest();
+        channel.writeAndFlush(logoutRequest);
     }
 }

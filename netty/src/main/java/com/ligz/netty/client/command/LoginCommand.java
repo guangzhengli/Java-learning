@@ -11,18 +11,18 @@ public class LoginCommand implements Command {
 
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        LoginRequest loginRequestPacket = new LoginRequest();
-        log.info("please input your username");
-        loginRequestPacket.setUserName(scanner.nextLine());
-        loginRequestPacket.setPassword("pwd");
+        LoginRequest loginRequest = new LoginRequest();
+        System.out.println("please input your username");
+        loginRequest.setUserName(scanner.nextLine());
+        loginRequest.setPassword("pwd");
 
-        channel.writeAndFlush(loginRequestPacket);
+        channel.writeAndFlush(loginRequest);
         waitForLoginResponse();
     }
 
     private static void waitForLoginResponse() {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(10000);
         } catch (InterruptedException ignored) {
         }
     }

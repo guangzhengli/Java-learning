@@ -14,11 +14,11 @@ public class CreateGroupCommand implements Command {
 
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        CreateGroupRequest createGroupRequestPacket = new CreateGroupRequest();
-        log.info("create group, please input userId list, for example: 1,2,3");
+        CreateGroupRequest createGroupRequest = new CreateGroupRequest();
+        System.out.println("create group, please input userId list, for example: 1,2,3");
         String userIds = scanner.next();
-        createGroupRequestPacket.setUserIdList(Arrays.asList(userIds.split(USER_ID_SPLITER)));
-        channel.writeAndFlush(createGroupRequestPacket);
+        createGroupRequest.setUserIdList(Arrays.asList(userIds.split(USER_ID_SPLITER)));
+        channel.writeAndFlush(createGroupRequest);
     }
 
 }

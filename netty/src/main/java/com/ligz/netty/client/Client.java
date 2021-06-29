@@ -1,6 +1,7 @@
 package com.ligz.netty.client;
 
 import com.ligz.netty.client.command.CommandManager;
+import com.ligz.netty.client.command.LoginCommand;
 import com.ligz.netty.client.handler.CreateGroupResponseHandler;
 import com.ligz.netty.client.handler.GroupMessageResponseHandler;
 import com.ligz.netty.client.handler.HeartBeatTimerHandler;
@@ -13,7 +14,10 @@ import com.ligz.netty.client.handler.QuitGroupResponseHandler;
 import com.ligz.netty.codec.CustomProtocolDecoder;
 import com.ligz.netty.codec.CustomProtocolEncoder;
 import com.ligz.netty.codec.Spliter;
+import com.ligz.netty.config.GlobalConfig;
 import com.ligz.netty.handler.IMIdleStateHandler;
+import com.ligz.netty.session.MemorySession;
+import com.ligz.netty.session.Session;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -35,6 +39,8 @@ public class Client {
     private static final String HOST = "127.0.0.1";
 
     public static void main(String[] args) {
+        Session session = MemorySession.getInstance();
+        GlobalConfig.init(session);
         NioEventLoopGroup work = new NioEventLoopGroup();
 
         Bootstrap bootstrap = new Bootstrap();
@@ -85,10 +91,15 @@ public class Client {
 
     private static void startConsole(Channel channel) {
         CommandManager commandManager = new CommandManager();
+        LoginCommand loginCommand = new LoginCommand();
         Scanner scanner = new Scanner(System.in);
         Thread console = new Thread(() -> {
             while (!Thread.interrupted()) {
-                commandManager.exec(scanner, channel);
+                if (!GlobalConfig.getSession().hasLogin(channel)) {
+                    loginCommand.exec(scanner, channel);
+                } else {
+                    commandManager.exec(scanner, channel);
+                }
             }
         });
         console.start();

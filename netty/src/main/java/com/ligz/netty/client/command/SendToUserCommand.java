@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class SendToUserCommand implements Command {
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        log.info("send message, please input userId and message");
+        System.out.println("send message, please input userId and message");
 
         String toUserId = scanner.next();
         String message = scanner.next();

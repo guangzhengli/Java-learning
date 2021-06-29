@@ -11,11 +11,11 @@ public class ListGroupMembersCommand implements Command {
 
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        ListGroupMembersRequest listGroupMembersRequestPacket = new ListGroupMembersRequest();
-        log.info("please input groupId");
+        ListGroupMembersRequest listGroupMembersRequest = new ListGroupMembersRequest();
+        System.out.println("please input groupId:");
         String groupId = scanner.next();
 
-        listGroupMembersRequestPacket.setGroupId(groupId);
-        channel.writeAndFlush(listGroupMembersRequestPacket);
+        listGroupMembersRequest.setGroupId(groupId);
+        channel.writeAndFlush(listGroupMembersRequest);
     }
 }

@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class JoinGroupCommand implements Command {
     @Override
     public void exec(Scanner scanner, Channel channel) {
-        JoinGroupRequest joinGroupRequestPacket = new JoinGroupRequest();
-        log.info("please input groupId, join the group");
+        JoinGroupRequest joinGroupRequest = new JoinGroupRequest();
+        System.out.println("please input groupId, join the group");
         String groupId = scanner.next();
 
-        joinGroupRequestPacket.setGroupId(groupId);
-        channel.writeAndFlush(joinGroupRequestPacket);
+        joinGroupRequest.setGroupId(groupId);
+        channel.writeAndFlush(joinGroupRequest);
     }
 }
