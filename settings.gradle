@@ -1,4 +1,4 @@
 rootProject.name = 'Java-learning'
 include 'concurrent'
-include 'netty'
+include 'netty-im'
 
