@@ -85,16 +85,11 @@ public class ZookeeperUtils {
     }
 
     public static void clearRegistry(String path) {
-        REGISTERED_PATH_SET.forEach(p -> {
-            try {
-                if (p.endsWith(path)) {
-                    zkClient.delete().forPath(p);
-                }
-            } catch (Exception e) {
-                log.error("clear registry for path [{}] fail", p);
-            }
-        });
-        log.info("All registered services on the server are cleared:[{}]", REGISTERED_PATH_SET);
+        try {
+            zkClient.delete().forPath(path);
+        } catch (Exception e) {
+            log.error("clear registry for path [{}] fail", path);
+        }
     }
 
     private static void registerWatcher(String parentPath) throws Exception {

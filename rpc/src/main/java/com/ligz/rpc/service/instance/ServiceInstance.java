@@ -1,9 +1,8 @@
 package com.ligz.rpc.service.instance;
 
-import java.io.Serializable;
 import java.util.Map;
 
-public interface ServiceInstance extends Serializable {
+public interface ServiceInstance {
     String getId();
 
     String getServiceName();

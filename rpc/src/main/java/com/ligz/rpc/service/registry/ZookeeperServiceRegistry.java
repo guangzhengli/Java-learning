@@ -1,6 +1,7 @@
 package com.ligz.rpc.service.registry;
 
 import com.ligz.rpc.serialize.Serialize;
+import com.ligz.rpc.service.instance.DefaultServiceInstance;
 import com.ligz.rpc.service.instance.ServiceInstance;
 import com.ligz.rpc.util.ZookeeperUtils;
 import lombok.extern.slf4j.Slf4j;
@@ -28,7 +29,7 @@ public class ZookeeperServiceRegistry implements ServiceRegistry {
     public List<ServiceInstance> getServiceInstance(String serviceName) {
         List<byte[]> data = ZookeeperUtils.getChildrenNodes(ZK_REGISTER_ROOT_PATH + "/" + serviceName);
         return data.stream()
-                .map(bytes -> Serialize.DEFAULT.deserialize(ServiceInstance.class, bytes))
+                .map(bytes -> Serialize.DEFAULT.deserialize(DefaultServiceInstance.class, bytes))
                 .collect(Collectors.toList());
     }
 
