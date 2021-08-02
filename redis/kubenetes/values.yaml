@@ -93,17 +93,15 @@ image:
 ## @param networkPolicy.ingressNSPodMatchLabels For other namespaces match by pod labels and namespace labels
 ##
 networkPolicy:
-  enabled: true
+  enabled: false
   ## When set to false, only pods with the correct
   ## client label will have network access to the port Redis&trade; is listening
   ## on. When true, Redis&trade; will accept connections from any source
   ## (with the correct destination port).
   ##
   allowExternal: true
-  ingressNSMatchLabels:
-    redis: external
-  ingressNSPodMatchLabels:
-    redis: true
+  ingressNSMatchLabels: {}
+  ingressNSPodMatchLabels: {}
 serviceAccount:
   ## @param serviceAccount.create Specifies whether a ServiceAccount should be created
   ##
@@ -260,7 +258,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size Size of data volume
   ##
-  size: 8Gi
+  size: 1Gi
   ## @param persistence.matchLabels Persistent Volume selectors
   ## https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
   ##
@@ -637,7 +635,7 @@ cluster:
   ##
   ## @param cluster.nodes The number of master nodes should always be >= 3, otherwise cluster creation will fail
   ##
-  nodes: 4
+  nodes: 6
   ## @param cluster.replicas Number of replicas for every master in the cluster
   ## Parameter to be passed as --cluster-replicas to the redis-cli --cluster create
   ## 1 means that we want a replica for every master created
@@ -648,7 +646,7 @@ cluster:
   externalAccess:
     ## @param cluster.externalAccess.enabled Enable access to the Redis
     ##
-    enabled: true
+    enabled: false
     service:
       ## @param cluster.externalAccess.service.type Type for the services used to expose every Pod
       ## At this moment only LoadBalancer is supported
@@ -719,8 +717,7 @@ metrics:
     prometheus.io/scrape: "true"
     prometheus.io/port: "9121"
   ## @param metrics.podLabels Additional labels for Metrics exporter pod
-  podLabels:
-    release: prometheus
+  podLabels: {}
   ## Enable this if you're using https://github.com/coreos/prometheus-operator
   ##
   serviceMonitor:
