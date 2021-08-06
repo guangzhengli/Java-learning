@@ -1,4 +1,4 @@
-package com.ligz.redis.service;
+package com.ligz.redis.zip;
 
 import com.ligz.redis.BaseTest;
 import org.junit.jupiter.api.Test;
@@ -23,6 +23,9 @@ public class ImageStoreTest extends BaseTest {
         }
     }
 
+    /**
+     * 1000000 number cost 70m when use the string
+     */
     @Test
     public void string() {
         for (int i = 0; i < 10; i++) {
@@ -31,6 +34,11 @@ public class ImageStoreTest extends BaseTest {
         System.out.println("watch redis memory usage");
     }
 
+    /**
+     * use zip list to replace string hash value
+     *
+     * 1000000 number cost 10m when use the zip list
+     */
     @Test
     public void zipList() {
         Map<String, String> map = buildImageIds();

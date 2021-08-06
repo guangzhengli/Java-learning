@@ -3,9 +3,9 @@ spring:
     redisson:
       config: |
         singleServerConfig:
-          idleConnectionTimeout: 10000
-          connectTimeout: 10000
-          timeout: 3000
+          idleConnectionTimeout: 100000
+          connectTimeout: 1000000
+          timeout: 300000
           retryAttempts: 3
           retryInterval: 1500
           password: null

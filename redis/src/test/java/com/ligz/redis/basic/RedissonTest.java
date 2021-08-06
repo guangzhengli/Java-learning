@@ -1,4 +1,4 @@
-package com.ligz.redis.service;
+package com.ligz.redis.basic;
 
 import com.ligz.redis.BaseTest;
 import org.junit.jupiter.api.Test;

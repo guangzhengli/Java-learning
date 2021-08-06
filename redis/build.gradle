@@ -24,10 +24,11 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
 
     testImplementation "org.springframework.boot:spring-boot-starter-test"
-    testImplementation "io.rest-assured:spring-mock-mvc"
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testImplementation 'org.junit.jupiter:junit-jupiter-engine'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params'
     testImplementation 'org.mockito:mockito-junit-jupiter:2.26.0'
+
 }
 
 test {
